@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Emmanuel EKLU</title>
+    <style>
+        
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        } 
+        body{
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-color: blanchedalmond;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        body::before{
+            position: absolute;
+            width: min(1400px, 90vw);
+            top: 10%;
+            left: 50%;
+            height: 90%;
+            transform: translateX(-50%);
+            content: '';
+            background-image: url();
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: top center;
+            pointer-events: none;
+        }
+    </style>
+    <link rel="stylesheet" href="TutoStyle.css">
+</head>
+<body>
+<!-- Navbar du header  -->
+        <header class="header">
+            <a href="#" class="logo">Portfolio</a>
+            <div class="menu-toggle" id="menu-toggle">☰</div>
+            <nav class="navbar">
+                <a href="#">Accueil</a>
+                <a href="#">A propos de moi</a>
+                <a href="#">Compétences</a>
+                <a href="#">Projets</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </nav>
+        </header>
+    </div>
+<!-- Caroussel 3D du body -->
+    <div class="banner">
+        <div class="slider" style="--quantity: 10">
+            <div class="item" style="--position: 1"><img src="imgDeBase/Canva_logo.png" alt=""></div>
+            <div class="item" style="--position: 2"><img src="imgDeBase/CapCut_Logo.jpg" alt=""></div>
+            <div class="item" style="--position: 3"><img src="imgDeBase/CSS_Logo.jpg" alt=""></div>
+            <div class="item" style="--position: 4"><img src="imgDeBase/FlutterFlow_Logo.png" alt=""></div>
+            <div class="item" style="--position: 5"><img src="imgDeBase/HTML_Logo.jpg" alt=""></div>
+            <div class="item" style="--position: 6"><img src="imgDeBase/Nursing_Logo.jpg" alt=""></div>
+            <div class="item" style="--position: 7"><img src="imgDeBase/Office365_Loog.jpg" alt=""></div>
+            <div class="item" style="--position: 8"><img src="imgDeBase/Python_Logo.jpg" alt=""></div>
+            <div class="item" style="--position: 9"><img src="imgDeBase/Rstudio_Logo.webp" alt=""></div>
+            <div class="item" style="--position: 10"><img src="imgDeBase/FlutterFlow_Logo.png" alt=""></div>
+        </div>
+        <div class="content">
+<!-- Message et disposition autour de mon avatar 3D -->
+            <h1 data-content="Emmanuel">
+                Emmanuel
+            </h1>
+            <div class="model"></div>
+        </div>
+    </div>
+     <!-- 
+    ***********-------------************** SECTION : A PROPOS **************-----------
+    ***********-------------**********************----------------********************* 
+    -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <!-- Texte à gauche -->
+                <div class="about-text">
+                    <h2>À propos de moi</h2>
+                    <p>
+                        Je suis <strong>Kodjo Emmanuel EKLU</strong>, étudiant ingénieur en Master 1 des Technologies de l'Information pour la Santé à l'ESMT de Dakar, au Sénégal.
+                        En tant qu'infirmier diplômé d'État depuis 2021, je combine ma passion pour les soins infirmiers et la technologie pour innover dans le domaine de la santé numérique.
+                    </p>
+                    <p>
+                        Spécialisé dans les soins à domicile et passionné par les outils digitaux, je développe des solutions telles que <strong>ScanSanté</strong>, une application mobile innovante intégrant un QR code unique pour une gestion rapide et sécurisée des données médicales.
+                    </p>
+                </div>
+                <!-- Image à droite -->
+                <div class="about-image">
+                    <img src="veste.jpg" alt="Photo de Kodjo Emmanuel EKLU">
+                </div>
+            </div>
+        </div>
+    </section>    
+    
+    
+         <!-- 
+    ***********-------------************** SECTION : MES COMPETENCES **************-----------
+    ***********-------------**********************----------------********************* 
+          -->
+    <section id="skills" class="skills-section">
+    <div class="container">
+        <h2>Compétences</h2>
+        <div class="skills-content">
+            <div class="skill-category">
+                <h3>En Santé</h3>
+                <ul>
+                    <li>Soins infirmiers et obstétricaux (Accouchement)</li>
+                    <li>Vaccination et secourisme</li>
+                    <li>Suivi des personnes âgées</li>
+                    <li>Soins à domicile (spécialisé)</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>En Graphisme et Montage Vidéo</h3>
+                <ul>
+                    <li>Canva Pro (Avancé)</li>
+                    <li>Photoshop (Débutant)</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>En Informatique</h3>
+                <ul>
+                    <li>Bureautique : Word (Avancé), PowerPoint (Avancé), Excel (Intermédiaire)</li>
+                    <li>Programmation : Python, R/RStudio (Débutant), HTML (Débutant), UML (Débutant)</li>
+                    <li>Outils de Google Workspace</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>En Intelligence Artificielle Générative</h3>
+                <ul>
+                    <li>ChatGPT</li>
+                    <li>Claude AI</li>
+                    <li>Perplexity AI</li>
+                    <li>Microsoft Copilot</li>
+                    <li>Gemini, SUNO AI, et bien d'autres</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 
+    ***********-------------************** SECTION : MES PROJETS **************-----------
+    ***********-------------**********************----------------********************* 
+-->
+<section id="projects" class="projects-section">
+    <div class="container">
+        <h2>Mes Projets et Réalisations</h2>
+        <div class="project-list">
+            <!-- Projet 1 -->
+            <div class="project-item">
+                <h3>ScanSanté</h3>
+                <p>
+                    Une solution mobile innovante visant à faciliter la collecte, l’accès et la gestion des informations médicales personnelles des utilisateurs. 
+                    Elle repose sur un bracelet avec un QR code unique donnant un accès rapide et sécurisé aux données médicales essentielles.
+                </p>
+                <ul>
+                    <li><strong>Technologies utilisées :</strong> FlutterFlow, DALL-E 3, Canva Pro</li>
+                    <li><strong>Livrables :</strong> Prototypes du bracelet, maquettes de l’application mobile</li>
+                </ul>
+            </div>
+
+            <!-- Projet 2 -->
+            <div class="project-item">
+                <h3>Plateforme de soins à domicile - Koulmed</h3>
+                <p>
+                    Un projet visant à offrir une meilleure prise en charge des patients à domicile grâce à une plateforme en ligne connectant professionnels de santé et patients.
+                </p>
+                <ul>
+                    <li><strong>Spécialité :</strong> Soins infirmiers personnalisés et gestion des rendez-vous</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 
+    ***********-------------************** SECTION : GALERIE PHOTOS ScanSanté **************-----------
+    ***********-------------**********************----------------********************* 
+-->
+<section id="gallery" class="gallery-section">
+    <div class="container">
+        <h2>Galerie Mockups - ScanSanté</h2>
+        <p>Découvrez les maquettes mobiles de ma solution ScanSanté, conçues pour révolutionner la gestion des données médicales.</p>
+        <div class="gallery">
+            <!-- Les 13 images -->
+            <div class="gallery-item"><img src="img_ScanSanté/1Scan.png" alt="Mockup ScanSanté 1"></div>
+            <div class="gallery-item"><img src="img_ScanSanté/2Scan.png" alt="Mockup ScanSanté 2"></div>
+            <div class="gallery-item"><img src="img_ScanSanté/3Scan.png" alt="Mockup ScanSanté 3"></div>
+            <div class="gallery-item"><img src="img_ScanSanté/4Scan.png" alt="Mockup ScanSanté 4"></div>
+            <div class="gallery-item"><img src="img_ScanSanté/5Scan.png" alt="Mockup ScanSanté 5"></div>
+            <div class="gallery-item"><img src="img_ScanSanté/6Scan.png" alt="Mockup ScanSanté 6"></div>
+            <div class="gallery-item"><img src="img_ScanSanté/7Scan.png" alt="Mockup ScanSanté 7"></div>
+            <div class="gallery-item"><img src="img_ScanSanté/8Scan.png" alt="Mockup ScanSanté 8"></div>
+            <div class="gallery-item"><img src="img_ScanSanté/9Scan.png" alt="Mockup ScanSanté 9"></div>
+            <div class="gallery-item"><img src="img_ScanSanté/10Scan.png" alt="Mockup ScanSanté 10"></div>
+            <div class="gallery-item"><img src="img_ScanSanté/11Scan.png" alt="Mockup ScanSanté 11"></div>
+            <div class="gallery-item"><img src="img_ScanSanté/12Scan.png" alt="Mockup ScanSanté 12"></div>
+            <div class="gallery-item"><img src="img_ScanSanté/13Scan.png" alt="Mockup ScanSanté 13"></div>
+        </div>
+    </div>
+</section>
+
+
+<!-- 
+    ***********-------------************** SECTION : Contact et footer **************-----------
+    ***********-------------**********************----------------********************* 
+-->
+
+<!-- Section Services -->
+<section id="services" class="services-section">
+    <div class="container">
+        <h2>Nos Services</h2>
+        <p>Nous proposons des solutions innovantes pour transformer la gestion des données médicales et optimiser les systèmes de santé.</p>
+        <div class="services">
+            <div class="service-item">
+                <h3>Développement d'applications mobiles</h3>
+                <p>Création d'applications intuitives pour la gestion des données de santé, adaptées à vos besoins.</p>
+            </div>
+            <div class="service-item">
+                <h3>Analyse des données de santé</h3>
+                <p>Utilisation des technologies d’intelligence artificielle pour l'analyse et l’interprétation des données médicales.</p>
+            </div>
+            <div class="service-item">
+                <h3>Formation en santé digitale</h3>
+                <p>Accompagnement des professionnels de santé dans l’intégration des outils numériques dans leur pratique quotidienne.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section Contact -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <h2>Contactez-nous</h2>
+        <p>Pour toute question ou collaboration, n'hésitez pas à nous contacter.</p>
+        <form action="mailto:ekluemmanuel16@gmail.com" method="POST" class="contact-form">
+            <input type="text" name="name" placeholder="Votre nom" required>
+            <input type="email" name="email" placeholder="Votre adresse email" required>
+            <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 Kodjo Emmanuel EKLU. Tous droits réservés.</p>
+        <ul class="social-links">
+            <li><a href="https://www.linkedin.com/feed/">LinkedIn</a></li>
+            <li><a href="https://github.com/StCarmel">GitHub</a></li>
+        </ul>
+    </div>
+</footer>
+
+<script src="TutoScript.js"></script>
+</body>
+</html>

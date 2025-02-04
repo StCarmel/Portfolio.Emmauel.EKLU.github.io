@@ -1,0 +1,658 @@
+@import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif; }
+/* customisation du navbar
+ --------------------*************----------------
+ --------------------*************----------------
+ --------------------*************----------------*/
+ @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Styles de base */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 32px;
+    color: #160225; 
+    text-decoration: rgba(232, 166, 43, 0.989);
+    font-weight: 500;
+}
+
+.navbar {
+    display: flex;
+    gap: 40px;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 18px;
+    color: #2c0443d0;
+    font-weight: 500;
+    text-decoration: rgb(34, 107, 2);
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: rgb(239, 156, 23);
+    transition: .3s;
+}
+
+.navbar a:hover::before {
+    width: 100%;
+}
+.navbar.active {
+    display: flex;
+}
+
+
+/* Icône du menu hamburger 
+--------------------*************----------------
+  --------------------*************----------------
+   --------------------*************----------------*/
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #25283b22;
+}
+
+/* Responsive : menu pour petits écrans
+--------------------*************----------------
+  --------------------*************----------------
+   --------------------*************----------------*/
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 20px;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        background:transparent;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .navbar a {
+        margin: 10px 0;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* customisation de la caroussel 3D de l'écran d'Accueil 
+--------------------*************---------------- 
+ --------------------*************----------------
+  --------------------*************----------------*/
+  .banner{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.banner .slider{
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 10%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 20s linear infinite;
+    z-index: 2;
+}
+@keyframes autoRun{
+    from{
+        transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+    }to{
+        transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+    }
+}
+
+.banner .slider .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: 
+        rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(550px);
+}
+.banner .slider .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.banner .content{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1400px, 100vw);
+    height: max-content;
+    padding-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+.banner .content h1{
+    font-family: 'ICA Rubrik';
+    font-size: 16em;
+    line-height: 1em;
+    color: #25283B;
+    position: relative;
+}
+.banner .content h1::after{
+    position: absolute;
+    inset: 0 0 0 0;
+    content: attr(data-content);
+    z-index: 2;
+    -webkit-text-stroke: 2px #d2d2d2;
+    color: transparent;
+}
+.banner .content .author{
+    font-family: Poppins;
+    text-align: right;
+    max-width: 200px;
+}
+.banner .content h2{
+    font-size: 3em;
+}
+.banner .content .model{
+    background-image: url(Black_man-noBack.png);
+    width: 100%;
+    height: 75vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-size: auto 130%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 1;
+}
+@media screen and (max-width: 1023px) {
+    .banner .slider{
+        width: 160px;
+        height: 200px;
+        left: calc(50% - 80px);
+    }
+    .banner .slider .item{
+        transform: 
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(300px);
+    }
+    .banner .content h1{
+        text-align: center;
+        width: 100%;
+        text-shadow: 0 10px 20px #000;
+        font-size: 7em;
+    }
+    .banner .content .author{
+        color: #fff;
+        padding: 20px;
+        text-shadow: 0 10px 20px #000;
+        z-index: 2;
+        max-width: unset;
+        width: 100%;
+        text-align: center;
+        padding: 0 30px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .banner .slider{
+        width: 100px;
+        height: 150px;
+        left: calc(50% - 50px);
+    }
+    .banner .slider .item{
+        transform: 
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(180px);
+    }
+    .banner .content h1{
+        font-size: 5em;
+    }
+}
+/* 
+***********-------------**********************----------------*********************
+***********-------------************** SECTION : A PROPOS **************-----------
+***********-------------**********************----------------********************* */
+.about-section {
+    background-color: #25283B;
+    padding: 60px 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap; /* Pour les petits écrans */
+}
+
+.about-text {
+    flex: 1; /* Occupe l'espace disponible */
+    text-align: left; /* Aligne le texte à gauche */
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    color: #eeab25;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #fffefe;
+}
+
+.about-image {
+    flex: 1; /* Occupe l'espace disponible */
+    text-align: center; /* Centre l'image */
+}
+
+.about-image img {
+    max-width: 100%; /* L'image ne dépasse pas la largeur du conteneur */
+    height: auto; /* Maintient le ratio de l'image */
+    border-radius: 10px; /* Coins arrondis pour une touche moderne */
+}
+
+/* Responsive : empile le contenu en colonne sur petits écrans */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Empile le texte et l'image */
+    }
+
+    .about-image {
+        margin-top: 20px;
+    }
+}
+/* 
+***********-------------************** SECTION : MES COMPETENCES **************----
+***********-------------**********************----------------*********************
+     */
+     .skills-section {
+        background-color: blanchedalmond;
+        padding: 60px 20px;
+        color: #333;
+    }
+    
+    .skills-section .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .skills-section h2 {
+        font-size: 2.5rem;
+        color: #4a90e2;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+    }
+    
+    .skills-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+    }
+    
+    .skill-category {
+        flex: 1 1 calc(50% - 20px);
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .skill-category h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: #4a90e2;
+    }
+    
+    .skill-category ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .skill-category ul li {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 10px;
+        color: #555;
+    }
+    
+    @media (max-width: 768px) {
+        .skills-content {
+            flex-direction: column;
+        }
+    
+        .skill-category {
+            flex: 1 1 100%;
+        }
+    }
+    
+/* 
+***********-------------************** SECTION : MES PROJETS **************----
+***********-------------**********************----------------*********************
+ */
+
+ .projects-section {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.projects-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projects-section h2 {
+    font-size: 2.5rem;
+    color: #4a90e2;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.project-item {
+    flex: 1 1 calc(50% - 20px);
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.project-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #4a90e2;
+}
+
+.project-item p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.project-item ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 1rem;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .project-item {
+        flex: 1 1 100%;
+    }
+}
+
+/* 
+***********-------------************** SECTION : GLERIE PHOTO ScanSaté **************----
+***********-------------**********************----------------*********************
+ */
+
+/* Section Galerie */
+.gallery-section {
+    background-color: #f4a861dd; /* Fond léger */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.gallery-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-section h2 {
+    font-size: 2.5rem;
+    color: #4a90e2;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.gallery-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* Grille des images */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colonnes fixes */
+    gap: 20px; /* Espacement entre les cellules */
+    justify-items: center; /* Centre les images horizontalement */
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+    width: 100%; /* Prend toute la largeur disponible de la cellule */
+}
+
+.gallery-item img {
+    width: 100%; /* S'adapte à la largeur de la cellule */
+    height: auto; /* Ajuste automatiquement la hauteur à l'image */
+    object-fit: contain; /* Préserve les proportions de l'image */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Ajoute un effet au survol */
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05); /* Zoom léger au survol */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au survol */
+}
+
+
+/* Responsive pour tablettes */
+@media (max-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr); /* 3 colonnes pour les tablettes */
+    }
+}
+
+/* Responsive pour mobiles */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes pour les mobiles */
+    }
+}
+
+/* Responsive pour très petits écrans */
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr; /* 1 colonne pour les très petits écrans */
+    }
+}
+
+/* 
+***********-------------************** SECTION : Contact et footer **************----
+***********-------------**********************----------------*********************
+ */
+/* Section Services */
+.services-section {
+    background-color: #f5f5f5;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.services-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services-section h2 {
+    font-size: 2.5rem;
+    color: #4a90e2;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.services-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.service-item {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.service-item h3 {
+    font-size: 1.5rem;
+    color: #4a90e2;
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Section Contact */
+.contact-section {
+    background-color: #ffffff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contact-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    color: #4a90e2;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.contact-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    padding: 15px;
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #357ab8;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+}
+
+.footer .social-links a {
+    color: #4a90e2;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.footer .social-links a:hover {
+    color: #fff;
+}
